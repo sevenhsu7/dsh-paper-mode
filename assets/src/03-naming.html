@@ -1,0 +1,57 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { background:#0B0F17; color:#E6EDF3; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Apple Symbols"; }
+body { width:1200px; height:675px; overflow:hidden; }
+.wrap { width:1200px; height:675px; padding:48px 56px; display:flex; flex-direction:column; gap:28px; position:relative; }
+.glow { position:absolute; border-radius:50%; filter:blur(90px); opacity:.35; pointer-events:none; }
+.g1 { width:520px; height:520px; background:#1D4ED8; top:-220px; right:-120px; }
+.g2 { width:420px; height:420px; background:#0F766E; bottom:-240px; left:-140px; }
+.eyebrow { font-size:15px; letter-spacing:.18em; text-transform:uppercase; color:#7D8CA3; font-weight:600; }
+h1 { font-size:44px; line-height:1.15; font-weight:700; letter-spacing:-.02em; }
+h1 .accent { color:#7EE787; }
+.sub { font-size:19px; color:#9AA7B8; line-height:1.5; }
+.row { display:flex; gap:24px; }
+.card { background:#121926; border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:28px 30px; box-shadow:0 24px 60px rgba(0,0,0,.35); }
+.mono { font-family:"SF Mono",ui-monospace,Menlo,monospace; }
+.badge { display:inline-flex; align-items:center; gap:8px; background:rgba(126,231,135,.12); color:#7EE787; border:1px solid rgba(126,231,135,.28); border-radius:999px; padding:8px 16px; font-size:15px; font-weight:600; }
+.footer { margin-top:auto; display:flex; justify-content:space-between; align-items:center; color:#6F7C8F; font-size:15px; }
+.dot { width:8px; height:8px; border-radius:50%; background:#7EE787; box-shadow:0 0 16px #7EE787; }
+
+.anatomy { flex:1; display:flex; flex-direction:column; justify-content:center; gap:40px; }
+.filename { display:flex; align-items:flex-end; gap:0; font-family:"SF Mono",ui-monospace,Menlo,monospace; font-size:52px; font-weight:600; letter-spacing:-.02em; }
+.seg { padding:6px 10px; border-radius:10px; }
+.d { color:#F7B955; background:rgba(247,185,85,.10); }
+.c { color:#7EE787; background:rgba(126,231,135,.10); }
+.n { color:#8AB4F8; background:rgba(138,180,248,.10); }
+.e { color:#C9A7F7; background:rgba(201,167,247,.10); }
+.labels { display:flex; gap:24px; margin-top:18px; }
+.label { flex:1; font-size:16px; color:#9AA7B8; line-height:1.5; }
+.label b { display:block; color:#E6EDF3; font-size:17px; margin-bottom:4px; }
+.dedupe { display:flex; align-items:center; gap:14px; font-size:18px; color:#9AA7B8; }
+.pill { font-family:"SF Mono",monospace; background:#121926; border:1px solid rgba(255,255,255,.1); border-radius:10px; padding:8px 14px; color:#E6EDF3; font-size:17px; }
+.footer { margin-top:auto; display:flex; justify-content:space-between; color:#6F7C8F; font-size:15px; }
+</style></head><body><div class="wrap">
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="eyebrow">Enforced by Paper mode</div>
+  <h1>Every file tells you <span class="accent">what, when, where.</span></h1>
+  <div class="anatomy">
+    <div>
+      <div class="filename">
+        <span class="seg d">261018</span><span class="seg" style="color:#3A4656">-</span><span class="seg c">AoC</span><span class="seg" style="color:#3A4656">-</span><span class="seg n">竞品调研</span><span class="seg e">.md</span>
+      </div>
+      <div class="labels">
+        <div class="label"><b>Date</b>YYMMDD, real system clock — never from memory.</div>
+        <div class="label"><b>Project code</b>2–6 chars, deterministic, constant for the session.</div>
+        <div class="label"><b>Name + ext</b>Meaningful, sanitized, Chinese-friendly.</div>
+      </div>
+    </div>
+    <div class="dedupe">
+      <span>Name already taken?</span>
+      <span class="pill">…-竞品调研.md</span>
+      <span>→</span>
+      <span class="pill">…-竞品调研-2.md</span>
+      <span style="color:#7EE787">never overwrites.</span>
+    </div>
+  </div>
+  <div class="footer"><span>Archive folder: AI-Cooperate (unchanged)</span><span>github.com/sevenhsu7/dsh-cowork-mode</span></div>
+</div></body></html>

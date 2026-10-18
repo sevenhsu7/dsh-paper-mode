@@ -1,0 +1,62 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { background:#0B0F17; color:#E6EDF3; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Apple Symbols"; }
+body { width:1200px; height:675px; overflow:hidden; }
+.wrap { width:1200px; height:675px; padding:48px 56px; display:flex; flex-direction:column; gap:28px; position:relative; }
+.glow { position:absolute; border-radius:50%; filter:blur(90px); opacity:.35; pointer-events:none; }
+.g1 { width:520px; height:520px; background:#1D4ED8; top:-220px; right:-120px; }
+.g2 { width:420px; height:420px; background:#0F766E; bottom:-240px; left:-140px; }
+.eyebrow { font-size:15px; letter-spacing:.18em; text-transform:uppercase; color:#7D8CA3; font-weight:600; }
+h1 { font-size:44px; line-height:1.15; font-weight:700; letter-spacing:-.02em; }
+h1 .accent { color:#7EE787; }
+.sub { font-size:19px; color:#9AA7B8; line-height:1.5; }
+.row { display:flex; gap:24px; }
+.card { background:#121926; border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:28px 30px; box-shadow:0 24px 60px rgba(0,0,0,.35); }
+.mono { font-family:"SF Mono",ui-monospace,Menlo,monospace; }
+.badge { display:inline-flex; align-items:center; gap:8px; background:rgba(126,231,135,.12); color:#7EE787; border:1px solid rgba(126,231,135,.28); border-radius:999px; padding:8px 16px; font-size:15px; font-weight:600; }
+.footer { margin-top:auto; display:flex; justify-content:space-between; align-items:center; color:#6F7C8F; font-size:15px; }
+.dot { width:8px; height:8px; border-radius:50%; background:#7EE787; box-shadow:0 0 16px #7EE787; }
+
+.main { display:flex; gap:24px; flex:1; }
+.card2 { flex:1.35; }
+.card2 .title { display:flex; align-items:center; gap:12px; font-size:26px; font-weight:700; }
+.card2 .desc { margin-top:14px; font-size:18px; color:#9AA7B8; line-height:1.55; }
+.chips { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+.chip { font-size:14px; color:#C9D4E3; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:999px; padding:8px 14px; }
+.side { flex:1; background:#0E141F; border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:22px; }
+.side h3 { font-size:14px; color:#6F7C8F; letter-spacing:.12em; text-transform:uppercase; margin-bottom:16px; }
+.sess { display:flex; align-items:center; gap:10px; padding:12px 14px; border-radius:12px; font-size:16px; color:#C9D4E3; }
+.sess + .sess { margin-top:6px; }
+.sess .t { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.sess.cowork { background:rgba(110,168,254,.08); border:1px solid rgba(110,168,254,.18); }
+.sess.code { color:#8B97A8; }
+.footer { margin-top:auto; display:flex; justify-content:space-between; align-items:center; color:#6F7C8F; font-size:15px; }
+
+.laptop { width:1.05em; height:1.05em; display:inline-block; vertical-align:-0.14em; }
+</style></head><body><div class="wrap">
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="eyebrow">Paper mode · a second contract</div>
+  <h1>One mode. <span class="accent">Four guarantees.</span></h1>
+  <div class="main">
+    <div class="card card2">
+      <div class="title">Paper mode <span class="badge">preset</span></div>
+      <div class="desc">Built for everything but code: research, analysis, reports. Auto-archived per workspace — tidy, consistent and easy to find.</div>
+      <div class="chips">
+        <div class="chip">🗂 Outputs → AI-Cooperate</div>
+        <div class="chip">🏷 YYMMDD-project-file</div>
+        <div class="chip">🧹 Scratch → system temp</div>
+        <div class="chip">📑 Badge on every session</div>
+      </div>
+      <div class="desc" style="margin-top:22px;font-size:15px;color:#6F7C8F">Coding work stays in Standard mode — rules never leak into repos.</div>
+    </div>
+    <div class="side">
+      <h3>Sidebar</h3>
+      <div class="sess cowork"><span>📑</span><span class="t">竞品调研 · 行业对比</span></div>
+      <div class="sess cowork"><span>📑</span><span class="t">页面组件普查</span></div>
+      <div class="sess cowork"><span>📑</span><span class="t">Q4 OKR 复盘草稿</span></div>
+      <div class="sess code"><span style="color:#6F7C8F;font-family:monospace;font-size:14px">&lt;/&gt;</span><span class="t">app: fix pagination bug</span></div>
+      <div class="sess code"><span style="color:#6F7C8F;font-family:monospace;font-size:14px">&lt;/&gt;</span><span class="t">web: review MR #128</span></div>
+    </div>
+  </div>
+  <div class="footer"><span>Agent preset · DeepSeek Harness</span><span>github.com/sevenhsu7/dsh-cowork-mode</span></div>
+</div></body></html>

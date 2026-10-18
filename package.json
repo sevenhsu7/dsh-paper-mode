@@ -1,0 +1,41 @@
+{
+  "name": "@local/dsh-cowork-preset",
+  "version": "1.5.0",
+  "private": true,
+  "type": "module",
+  "description": "Paper mode for DeepSeek Harness: a non-coding work preset with artifact governance (AI-Cooperate archive, enforced naming, git-aware archive ignoring, system-temp scratch with 7-day cleanup, 📑 session badges).",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "exports": {
+    ".": "./index.js",
+    "./save-tool": "./save-tool.js",
+    "./scratch-tool": "./scratch-tool.js",
+    "./scratch-cleanup": "./scratch-cleanup.js"
+  },
+  "files": [
+    "index.js",
+    "save-tool.js",
+    "save-core.js",
+    "scratch-tool.js",
+    "scratch-core.js",
+    "scratch-cleanup.js",
+    "cordis.patch.yml"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sevenhsu7/dsh-cowork-mode.git"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "agent-preset",
+    "cowork",
+    "non-coding",
+    "artifact-governance",
+    "paper-mode",
+    "paper"
+  ]
+}

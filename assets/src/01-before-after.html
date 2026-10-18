@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { background:#0B0F17; color:#E6EDF3; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Apple Symbols"; }
+body { width:1200px; height:675px; overflow:hidden; }
+.wrap { width:1200px; height:675px; padding:40px 52px; display:flex; flex-direction:column; gap:20px; position:relative; }
+.glow { position:absolute; border-radius:50%; filter:blur(90px); opacity:.35; pointer-events:none; }
+.g1 { width:520px; height:520px; background:#1D4ED8; top:-220px; right:-120px; }
+.g2 { width:420px; height:420px; background:#0F766E; bottom:-240px; left:-140px; }
+.eyebrow { font-size:15px; letter-spacing:.18em; text-transform:uppercase; color:#7D8CA3; font-weight:600; }
+h1 { font-size:40px; line-height:1.15; font-weight:700; letter-spacing:-.02em; }
+h1 .accent { color:#7EE787; }
+.sub { font-size:17px; color:#9AA7B8; line-height:1.5; }
+.row { display:flex; gap:24px; }
+.card { background:#121926; border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:28px 30px; box-shadow:0 24px 60px rgba(0,0,0,.35); }
+.mono { font-family:"SF Mono",ui-monospace,Menlo,monospace; }
+.badge { display:inline-flex; align-items:center; gap:8px; background:rgba(126,231,135,.12); color:#7EE787; border:1px solid rgba(126,231,135,.28); border-radius:999px; padding:8px 16px; font-size:15px; font-weight:600; }
+.footer { margin-top:auto; display:flex; justify-content:space-between; align-items:center; color:#6F7C8F; font-size:15px; }
+.dot { width:8px; height:8px; border-radius:50%; background:#7EE787; box-shadow:0 0 16px #7EE787; }
+
+.panels { display:flex; gap:24px; flex:1; }
+.panel { flex:1; background:#0E141F; border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:20px 22px; display:flex; flex-direction:column; gap:12px; }
+.panel h2 { font-size:21px; font-weight:700; display:flex; align-items:center; gap:10px; }
+.tag { font-size:12px; padding:4px 10px; border-radius:999px; font-weight:700; letter-spacing:.06em; }
+.bad { background:rgba(248,113,113,.14); color:#F87171; border:1px solid rgba(248,113,113,.3); }
+.good { background:rgba(126,231,135,.14); color:#7EE787; border:1px solid rgba(126,231,135,.3); }
+.files { display:flex; flex-direction:column; gap:8px; font-size:15px; }
+.file { display:flex; align-items:center; gap:10px; padding:8px 12px; border-radius:9px; background:rgba(255,255,255,.03); color:#B6C2D2; }
+.file.warn { color:#FCA5A5; background:rgba(248,113,113,.06); }
+.tree { font-size:15px; line-height:1.75; color:#B6C2D2; }
+.tree .dir { color:#7EE787; }
+.tree .file2 { color:#E6EDF3; }
+.note { margin-top:auto; font-size:13px; color:#6F7C8F; line-height:1.45; }
+</style></head><body><div class="wrap">
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="eyebrow">Paper mode for DeepSeek Harness</div>
+  <h1>Same AI. <span class="accent">Different contract.</span></h1>
+  <div class="sub">Non-coding work gets its own folder, its own naming and its own rules — so the workspace stops turning into a landfill.</div>
+  <div class="panels">
+    <div class="panel">
+      <h2>Before <span class="tag bad">MESSY</span></h2>
+      <div class="files">
+        <div class="file warn">📄 report.md</div>
+        <div class="file warn">📄 分析报告最终版.md</div>
+        <div class="file warn">📄 output.csv</div>
+        <div class="file warn">🐍 tmp_script.py</div>
+        <div class="file warn">🖼️ Screenshot 2026-10-18 at 10.32.11.png</div>
+              </div>
+      <div class="note">Everything dumped into the workspace root. Which one is final? Which project? Which day?</div>
+    </div>
+    <div class="panel">
+      <h2>After <span class="tag good">ORGANIZED</span></h2>
+      <div class="tree">
+        work/<br>
+        └─ <span class="dir">AI-Cooperate/</span><br>
+        &nbsp;&nbsp;&nbsp;├─ <span class="file2">261018-AoC-竞品调研.md</span><br>
+        &nbsp;&nbsp;&nbsp;├─ <span class="file2">261018-AoC-数据校验.csv</span><br>
+        &nbsp;&nbsp;&nbsp;└─ <span class="file2">261018-AoC-架构图.png</span><br>
+        <br>
+        system temp/<br>
+        └─ <span class="file2">paper-261018-AoC-1f2e/ &nbsp;(7d auto-clean)</span>
+      </div>
+      <div class="note">One archive. Date + project in every name. Scratch lives in system temp.</div>
+    </div>
+  </div>
+  <div class="footer"><span>Enforced by Paper mode</span><span>github.com/sevenhsu7/dsh-cowork-mode</span></div>
+</div></body></html>
