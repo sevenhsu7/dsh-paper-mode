@@ -24,24 +24,24 @@ The naming is not a prompt suggestion: every new file must be written through th
 Requires a DSH build with the plugin/bundle system (Desktop or `dsh` CLI).
 
 ```sh
-dsh plugin --profile desktop add github:sevenhsu7/dsh-cowork-mode
+dsh plugin --profile desktop add github:sevenhsu7/dsh-paper-mode
 ```
 
 Then restart DeepSeek Harness. A new **"Paper mode"** preset appears in **Settings → Agent presets** and in the new-task picker (custom presets group). The default preset stays **Standard** — Paper mode is selected explicitly, so coding sessions never see its rules.
 
-> Internal ids stay unchanged for compatibility: preset id `cowork`, package `@local/dsh-cowork-preset`, tool `cowork_save`, repo `sevenhsu7/dsh-cowork-mode`. Only the display name and the emoji badge changed (💻 → 📑).
+> Internal ids stay unchanged for compatibility: preset id `cowork`, package `@local/dsh-cowork-preset`, tool `cowork_save`, repo `sevenhsu7/dsh-paper-mode`. Only the display name and the emoji badge changed (💻 → 📑).
 
 <details>
 <summary>Alternative: install from a local clone</summary>
 
 ```sh
-git clone https://github.com/sevenhsu7/dsh-cowork-mode.git
-dsh plugin --profile desktop add ./dsh-cowork-mode
+git clone https://github.com/sevenhsu7/dsh-paper-mode.git
+dsh plugin --profile desktop add ./dsh-paper-mode
 ```
 
 Or use Creator mode in the app (`Settings → Agent presets → Creator`) and ask:
 
-> Install the bundle at `/absolute/path/to/dsh-cowork-mode` with `plugin_manager` `install_bundle`.
+> Install the bundle at `/absolute/path/to/dsh-paper-mode` with `plugin_manager` `install_bundle`.
 
 </details>
 
@@ -170,7 +170,7 @@ MIT — see [LICENSE](LICENSE).
 安装：
 
 ```sh
-dsh plugin --profile desktop add github:sevenhsu7/dsh-cowork-mode
+dsh plugin --profile desktop add github:sevenhsu7/dsh-paper-mode
 ```
 
 重启 DSH 后，在 设置 → Agent 预设 里会出现「Paper mode」，新建任务时选择即可。默认模式仍是 Standard。

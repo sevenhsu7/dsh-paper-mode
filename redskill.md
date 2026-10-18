@@ -2,12 +2,12 @@
 
 > **Read this file and install Paper mode for DeepSeek Harness.** One command, no config files to edit.
 
-Paper mode is an agent preset that gives non-coding work its own contract: outputs go to a workspace `AI-Cooperate/` archive with enforced `YYMMDD-project-file` names, intermediate files go to an auto-cleaned system-temp scratch directory, and Paper sessions are tagged with 📑 in the sidebar. Repo: <https://github.com/sevenhsu7/dsh-cowork-mode>
+Paper mode is an agent preset that gives non-coding work its own contract: outputs go to a workspace `AI-Cooperate/` archive with enforced `YYMMDD-project-file` names, intermediate files go to an auto-cleaned system-temp scratch directory, and Paper sessions are tagged with 📑 in the sidebar. Repo: <https://github.com/sevenhsu7/dsh-paper-mode>
 
 ## For humans — one command
 
 ```sh
-dsh plugin --profile desktop add github:sevenhsu7/dsh-cowork-mode
+dsh plugin --profile desktop add github:sevenhsu7/dsh-paper-mode
 ```
 
 Then restart DeepSeek Harness. Open **Settings → Agent presets** and confirm the **Paper mode** card. On a `dsh` CLI profile other than `desktop`, use that profile name (`web`, `headless`, …).
@@ -15,7 +15,7 @@ Then restart DeepSeek Harness. Open **Settings → Agent presets** and confirm t
 If you don't have the `dsh` CLI on your PATH, use full path:
 
 ```sh
-"/Applications/DeepSeek Harness.app/Contents/Resources/runtime/cli/bin/dsh" plugin --profile desktop add github:sevenhsu7/dsh-cowork-mode
+"/Applications/DeepSeek Harness.app/Contents/Resources/runtime/cli/bin/dsh" plugin --profile desktop add github:sevenhsu7/dsh-paper-mode
 ```
 
 ## For agents — install, verify, report
@@ -25,12 +25,12 @@ When a user points you at this file, do this:
 1. **Detect DSH.** `command -v dsh`, or the desktop CLI path above.
 2. **Install the bundle.**
    ```sh
-   dsh plugin --profile desktop add github:sevenhsu7/dsh-cowork-mode
+   dsh plugin --profile desktop add github:sevenhsu7/dsh-paper-mode
    ```
    If the network blocks GitHub, clone first and install from the local folder:
    ```sh
-   git clone https://github.com/sevenhsu7/dsh-cowork-mode.git
-   dsh plugin --profile desktop add ./dsh-cowork-mode
+   git clone https://github.com/sevenhsu7/dsh-paper-mode.git
+   dsh plugin --profile desktop add ./dsh-paper-mode
    ```
    Never hand-edit the profile's `package.json` or `cordis.patch.yml` — `dsh plugin add` reconciles the bundle list itself.
 3. **Restart DeepSeek Harness** (plugin code and the preset roster load at boot). If the app is running and a restart is not possible, tell the user to restart it.
