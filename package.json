@@ -1,9 +1,9 @@
 {
   "name": "@local/dsh-cowork-preset",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "private": true,
   "type": "module",
-  "description": "Paper mode for DeepSeek Harness: a non-coding work preset with artifact governance (AI-Cooperate archive, enforced naming, git-aware archive ignoring, system-temp scratch with 7-day cleanup, 📑 session badges).",
+  "description": "Paper mode for DeepSeek Harness: a workspace-aware non-coding work preset with artifact governance (AI-Cooperate archive, enforced naming, git-aware archive ignoring, system-temp scratch with 7-day cleanup, 📑 session badges).",
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"

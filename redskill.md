@@ -50,7 +50,7 @@ When a user points you at this file, do this:
 - Preset `cowork` (display name **Paper mode**; internal id kept for compatibility), based on the standard tool set.
 - `cowork_save` tool: enforces the archive folder and naming (never overwrites; asks the user when multiple archive folders exist).
 - `scratch` tool + 7-day cleanup: intermediate files stay in an auto-cleaned system-temp directory, never in the workspace.
-- Git-aware archive: on first save in a git repository, the archive folder is added to `.git/info/exclude` (local-only; tracked `.gitignore` untouched), so `git status` stays clean.
+- Workspace-aware: automatically tells code repositories from plain folders. In a git repository the archive is added to `.git/info/exclude` (local-only; tracked `.gitignore` untouched) and scratch stays out; plain folders get no git handling.
 - Host plugin: prefixes 📑 on Paper mode session titles.
 
 ## Uninstall

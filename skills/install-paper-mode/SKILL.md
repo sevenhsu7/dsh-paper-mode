@@ -37,7 +37,7 @@ Repo: <https://github.com/sevenhsu7/dsh-paper-mode>
 
 6. **Report** installed version, verification output, and any step that needed the user.
 
-- Git-aware archive: `cowork_save` adds the archive folder to `.git/info/exclude` when the workspace is a git repository (local-only; tracked `.gitignore` untouched).
+- Workspace-aware: automatically detects whether the workspace is a git repository. In repos the archive is added to `.git/info/exclude` (local-only; tracked `.gitignore` untouched); plain folders get no git handling.
 
 ## Troubleshooting
 

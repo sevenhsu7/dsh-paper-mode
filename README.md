@@ -6,11 +6,12 @@
 
 Coding agents are great at producing code and bad at delivering everything else: research notes, CSVs, charts, screenshots and one-off scripts end up dumped in the workspace root, named `report.md` or `最终版.md`, while coding and analysis sessions blur together in the sidebar.
 
-Paper mode is an **agent preset** for DSH that gives non-coding work its own contract:
+Paper mode is an **agent preset** for DSH that gives non-coding work its own contract — and it knows what kind of workspace it is running in:
 
 | Guarantee | What it means |
 |---|---|
-| 🗂 **One archive** | Every output is written to the workspace's `AI-Cooperate/` folder (also recognized: `AI-CoWork/`, `AI-Corporate/`). In a git repository the folder is added to `.git/info/exclude` on first save, so `git status` stays clean without touching the tracked `.gitignore`. |
+| 🧭 **Workspace-aware** | Automatically detects whether the workspace is a **git repository** or a **plain folder**. Code repositories get the archive added to their local `.git/info/exclude` and keep scratch out; plain folders just get the archive, with no git handling at all. |
+| 🗂 **One archive** | Every output is written to the workspace's `AI-Cooperate/` folder (also recognized: `AI-CoWork/`, `AI-Corporate/`). |
 | 🏷 **Enforced naming** | Files are named `YYMMDD-<project-code>-<name>.<ext>`, with the real system date, a project code that stays constant for the session, and `-2`/`-3` de-duplication. Never overwrites. |
 | 🧹 **Scratch, not clutter** | Intermediate files (temporary scripts, intermediate data, process screenshots) go to an auto-cleaned system-temp scratch directory via the `scratch` tool — never the workspace — and are deleted after 7 days. |
 | 📑 **Identifiable sessions** | A small host plugin prefixes Paper session titles with 📑, so the sidebar shows which sessions are analysis and which are code. |
@@ -119,6 +120,14 @@ $TMPDIR/paper-261018-AoC-1f2e/        # date + project code + short session id
 - Copy anything worth keeping into the archive with `cowork_save` before the directory expires.
 
 
+### Workspace detection
+
+Before saving, `cowork_save` inspects the workspace:
+
+- It walks up from the workspace root to the nearest `.git` — a directory for normal clones, or a file for linked worktrees — so it can tell a **code repository** from a **plain folder**.
+- **Code repository** (including worktrees and nested workspaces): the archive is added to the repository's local `.git/info/exclude`, so `git status` stays clean; scratch always lives in system temp, never in the repo.
+- **Plain folder**: no git handling at all — no `.gitignore`, no exclude file, just the archive. A directory that merely *contains* repositories (e.g. a `work/` folder) stays a plain folder.
+
 ### Git repositories
 
 If the workspace lives in a git repository, the first `cowork_save` also adds the archive folder to the repository's **local** `.git/info/exclude`:
@@ -164,6 +173,7 @@ MIT — see [LICENSE](LICENSE).
 - 产物统一写入工作区的 `AI-Cooperate/`（文件夹名保持不变；已有的 `AI-CoWork/`、`AI-Corporate/` 也会识别）；在 git 仓库里第一次保存会自动写进 `.git/info/exclude`（只影响本机，不动被跟踪的 `.gitignore`），`git status` 保持干净；
 - 文件名强制为 `YYMMDD-项目代码-文件名`，日期取系统时间，项目代码整场会话一致，重名自动 `-2`/`-3`，绝不覆盖；
 - 过程文件（临时脚本、中间数据、截图）不进工作区：通过 `scratch` 工具放到系统临时目录，7 天后自动清理；
+- 自动识别工作区：是 git 仓库就自动写 `.git/info/exclude`、过程文件不进仓库；是普通文件夹就只创建归档目录，不做任何 git 操作；
 - 会话标题自动带 📑，侧边栏一眼区分分析会话和编码会话；
 - 最关键：**规则只活在模式里**。没选这个模式，规则就不存在——所以编码会话完全不受影响。
 
